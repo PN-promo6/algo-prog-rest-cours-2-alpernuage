@@ -123,3 +123,16 @@ app.listen(3000);
 app.get('/users', function (req, res) {
     res.send(users);
 })
+
+app.get('/users/:id', function (req, res) {
+    let id = req.params.id;
+    for (let i = 0; i < users.length; i++) {
+        const currentUser = users[i];
+        if (curentUser.id == id) {
+            res.send(currentUser);
+            break;
+        }
+    }
+    res.statusMessage = "User not found";
+    res.status(404).end();
+})
