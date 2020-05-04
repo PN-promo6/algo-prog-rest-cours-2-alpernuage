@@ -20,4 +20,8 @@ export class DataService {
     //       console.log(error);
     //     });
   }
+  public fetchUserById(id: string): Observable<any> {
+    let userIdObservable: Observable<any> = this.httpClient.get('http://localhost:3000/users/' + id);
+    return userIdObservable;
+  }
 }

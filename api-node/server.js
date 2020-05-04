@@ -128,7 +128,7 @@ app.get('/users/:id', function (req, res) {
     let id = req.params.id;
     for (let i = 0; i < users.length; i++) {
         const currentUser = users[i];
-        if (curentUser.id == id) {
+        if (currentUser.id == id) {
             res.send(currentUser);
             break;
         }
