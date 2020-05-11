@@ -1,4 +1,14 @@
 <!-- <p>users-list works!</p> -->
-<ul>
+<!-- <ul>
   <li *ngFor="let user of users">{{user.name}}</li>
-</ul>
+</ul> -->
+
+<section class="container">
+  <div class="row">
+
+    <app-user-preview class="col-4" *ngFor="let user of users" [user]="user">
+
+    </app-user-preview>
+
+  </div>
+</section>
