@@ -10,7 +10,7 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public fetchUsers(): Observable<any> {
+  public fetchUsers(): Observable<User[]> {
     let usersObservable: Observable<User[]> = this.httpClient.get<User[]>('http://localhost:3000/users');
     return usersObservable;
     //   .subscribe(
@@ -21,8 +21,8 @@ export class DataService {
     //       console.log(error);
     //     });
   }
-  public fetchUserById(id: string): Observable<User[]> {
-    let userIdObservable: Observable<User[]> = this.httpClient.get('http://localhost:3000/users/' + id);
+  public fetchUserById(id: string): Observable<any> {
+    let userIdObservable: Observable<any> = this.httpClient.get('http://localhost:3000/users/' + id);
     return userIdObservable;
   }
 }
